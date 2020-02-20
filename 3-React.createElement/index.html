@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3  React.createElement</title>
+</head>
+
+<body>
+
+    <!-- Trong html muốn một thẻ div có 2 con và tên class ta viết thế này -->
+    <div>
+        <div class="tille">Use html dom normal </div>
+        <img src="https://toofab.akamaized.net/2019/10/31/selena-gomez-main-getty-810x610.jpg" alt="">
+    </div>
+
+    <!-- Trong react sẽ làm như sau -->
+    <div id="root"></div>
+
+    <!-- List danh sách các sách yêu thích -->
+    <div id="list_book"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script>
+        /**
+         * createElement nhận vào một hoặc nhiều tham số. tham số đầu tiên sẽ là các element trong html(h1,span, div)
+         * tham số 2 là các attribute(cặp key value như class='tille')
+         * tham số 3 là content của nó
+         * với thẻ div có class là tille ở dòng 14 ta có thể dùng react để làm như sau: tham số đầu tiên sẽ là 'div'
+         * do nó là thẻ div, tham số thứ 2 là 1 obj {className: 'tille'}, tham số 3 là content của nó
+         */
+        const tille = React.createElement('div', {
+            className: 'tille'
+        }, 'Use react to write again')
+
+        //do img không có content nên chỉ có 2 tham số
+        const image = React.createElement('img', {
+            src:'https://toofab.akamaized.net/2019/10/31/selena-gomez-main-getty-810x610.jpg'
+        })
+
+        //gom 2 component trên vào 1 thể div
+        const App = React.createElement('div',null, tille, image) 
+        const root = document.getElementById('root')
+        ReactDOM.render(App, root)
+
+        const li_first=React.createElement('li',null,'Doremon')
+        const li_second=React.createElement('li',null,'Conan')
+        const ul=React.createElement('ul',null,li_first,li_second)
+        const list_book= document.getElementById('list_book')
+        ReactDOM.render(ul, list_book)
+    </script>
+</body>
+
+</html>
