@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 React.createElement</title>
+</head>
+
+<body>
+    <!-- Sử dụng jsx thay vì phải viết  
+        const tille = React.createElement('div', {className: 'tille'}, 'Use react to write again') 
+        chỉ cần viết
+        const tille =<div class="tille">Use react to write again </div> như html bình thường
+    -->
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const table = <table>
+            <tr>
+                <th>Mon</th>
+                <th>Tues</th>
+                <th>Wed</th>
+            </tr>
+            <tr>
+                <td>Match</td>
+                <td>English</td>
+                <td>History</td>
+            </tr>
+            <tr>
+                <td>Match</td>
+                <td>English</td>
+                <td>History</td>
+            </tr>
+            <tr>
+                <td>Match</td>
+                <td>English</td>
+                <td>History</td>
+            </tr>
+            <tr>
+                <td>Match</td>
+                <td>English</td>
+                <td>History</td>
+            </tr>
+        </table>
+        const root = document.getElementById('root')
+        ReactDOM.render(table, root)
+    </script>
+</body>
+
+</html>
