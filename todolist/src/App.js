@@ -11,7 +11,8 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
         </p>
-          <TodoItem />
+          <TodoItem title="Go to shopping" option={{a:4, b:7}} />
+          <TodoItem title="Go to school" option={{a:4, b:7}} />
           <a
             className="App-link"
             href="https://reactjs.org"
