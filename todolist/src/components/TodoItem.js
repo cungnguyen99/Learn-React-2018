@@ -4,7 +4,7 @@ class TodoItem extends Component {
   render(){
     return (
       <div className="todoItem">
-          <p>{this.props.title+this.props.option.a}</p>
+          <p>{this.props.title} <span>{this.props.option.time}</span></p>
       </div>
     );
   }
