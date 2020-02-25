@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function TodoItem() {
-  return (
-    <div className="todoItem">
-        <p>Đi chợ</p>
-    </div>
-  );
+class TodoItem extends Component {
+  render(){
+    return (
+      <div className="todoItem">
+          <p>Đi chợ</p>
+      </div>
+    );
+  }
 }
 
 export default TodoItem;
