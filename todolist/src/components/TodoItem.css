@@ -1,0 +1,14 @@
+.todoItem{
+    font-weight: 300;
+    font-size: 24px;
+    color: #4d4d4d;
+}
+.todoItem-complete{
+    text-decoration: line-through;
+    opacity: .3;
+}
+
+.todoItem-time{
+    color: burlywood;
+    font-weight: 900;
+}

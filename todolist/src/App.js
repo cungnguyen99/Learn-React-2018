@@ -5,16 +5,16 @@ class App extends Component {
   constructor() {
     super();
     this.todoList = [
-      'Go to shopping',
-      'Go to school',
-      'Play game'
+      { title: 'Go to shopping',time:'5h', isComplete: true },
+      { title: 'Go to school',time:'7h' },
+      { title: 'Play game', time:'9h30' }
     ]
   }
   render() {
     return (
       <div className="App">
         {
-          this.todoList.map((item, index) => <TodoItem key={index} title={item} option={{ time: '5h', day: 7 }} />)
+          this.todoList.map((item, index) => <TodoItem key={index} item={item} />)
         }
       </div>
     );
