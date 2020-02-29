@@ -6,13 +6,15 @@ class TodoItem extends Component {
     //giống với việc viết item=this.props.item học trong bài js nâng cao khi 2 biến trùng tên
     const { item } = this.props
     let className = "todoItem"
+
     //sử dụng cách bình thường để thêm class
     if (item.isComplete) {
       className += " todoItem-complete"
     }
+
     //sử dụng modul classNames
     var todoTime=classNames({
-      'todoItem-time': item.isComplete==true
+      'todoItem-time': item.isComplete
     })
     return (
       <div className={className}>

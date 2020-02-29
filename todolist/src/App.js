@@ -11,10 +11,17 @@ class App extends Component {
     ]
   }
   render() {
+    /**
+     * Render ra với điều kiện cho trước( với cách bình thường): nếu k có sản phẩm thì render ra chữ Nothing here
+     * còn nếu có sp thì render ra các sản phẩm
+     */
     return (
       <div className="App">
         {
-          this.todoList.map((item, index) => <TodoItem key={index} item={item} />)
+          this.todoList.length>0&&this.todoList.map((item, index) => <TodoItem key={index} item={item} />)
+        }
+        {
+          this.todoList.length===0&&'Nothing here'
         }
       </div>
     );
