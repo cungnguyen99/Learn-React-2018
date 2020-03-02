@@ -31,6 +31,14 @@ class TrafficLight extends Component {
            * TRONG HÀM render()
            */
           this.setState({ 
+            /**
+             * Ban đầu currenColor sẽ là đỏ, sau 1000ms gọi lại hàm setState sẽ thay đổi giá trị của currenColor
+             * theo hàm getNextColor, do bđ là RED thì this.getNextColor(this.state.currentColor)
+             * sẽ là this.getNextColor(RED), màu truyền vào hàm getNextColor là RED nên sẽ return ra ORANGE
+             * => màu từ đỏ chuyển sang cam, cứ như vậy chuyển sang các màu tiếp theo.
+             * Khi giá trị state thay đổi thì hàm render tự động được gọi nên mặc dù k gọi nó trong này
+             * nó vẫn sẽ tự động chạy
+             */
             currentColor: this.getNextColor(this.state.currentColor)
           })
       },1000)
