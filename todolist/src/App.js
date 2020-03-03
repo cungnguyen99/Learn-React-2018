@@ -18,10 +18,18 @@ class App extends Component {
   }
 
   onItemClick(index){
+    /**
+     * tạo mảng mới bằng cú pháp trong es6. do {todoList}=this.state sẽ là let todoList=this.state.todoList
+     * mà this.state.todoList lại là một mảng nên todoList(ở vế trái) cũng là một mảng coppy từ mảng todoList
+     * trong state.
+     * Vd: var a={b:[1,2,3,4]}
+     * var {b}=a tương đương var b=b.a nên khi ta log b ra sẽ có một mảng b với các ptu [1,2,3,4]
+     */
+    let {todoList}=this.state
+    todoList[index].isComplete=!todoList[index].isComplete
     this.setState({
-      todoList: this.state.todoList[index].isComplete=!this.state.todoList[index].isComplete
+      todoList
     })
-    console.log(this.state.todoList)
   }
   render() {
     const {todoList}=this.state
