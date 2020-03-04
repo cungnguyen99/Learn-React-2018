@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './TodoItem.css'
 var classNames = require('classnames');
 /**
- * BÀI LIÊN QUAN 6,7,8,9,10,11,13
+ * BÀI LIÊN QUAN 6,7,8,9,10,11,13,14, 15
  */
 class TodoItem extends Component {
   render() {
