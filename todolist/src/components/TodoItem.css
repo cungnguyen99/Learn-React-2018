@@ -2,12 +2,26 @@
     font-weight: 300;
     font-size: 24px;
     color: #4d4d4d;
+    display: flex;
+    border-bottom: 1px grey solid;
+    padding: 10px 60px;
+}
+.todoItem > p{
+    margin: 0;
+}
+.todoItem:last-child{
+    border-bottom: none;
 }
 .todoItem-complete{
     text-decoration: line-through;
     opacity: .3;
 }
 
+.todoItem img{
+    height: 32px;
+    width: 32px;
+    margin-right: 20px;
+}
 .todoItem-time{
     color: burlywood;
     font-weight: 900;
