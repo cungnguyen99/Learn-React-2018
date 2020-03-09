@@ -8,6 +8,7 @@ class App extends Component {
    */
   constructor(state) {
     super(state);
+    this.count=0
     this.state={
       newItem:'',
       todoList : [
@@ -23,6 +24,7 @@ class App extends Component {
     this.onItemClick=this.onItemClick.bind(this)
     this.onKeyUp=this.onKeyUp.bind(this)
     this.onChange=this.onChange.bind(this)
+    this.onClickTickAll=this.onClickTickAll.bind(this)
   }
 
   onItemClick(item){
@@ -78,11 +80,38 @@ class App extends Component {
       this.setState({
         todoList:[
           {title: text, isComplete:false},
+          /**
+           * đoạn này là coppy todoList trong state ra. giống đoạn const {todoList}=this.state ở trên
+           * nhưng ở trên dùng nhiều cái biến kia nên khai báo riêng ra còn bản chất vẫn là 
+           * this.state.todoList
+           */
           ...this.state.todoList
         ]
       })
     }
   }
+
+  onClickTickAll(){
+    this.count++;
+    const {todoList}=this.state
+    var firstStep;
+    if(this.count%2===0){
+      firstStep=todoList.map((item)=>{
+        item.isComplete=!item.isComplete
+        return item
+      })
+    }else{
+          firstStep=todoList.map((item)=>{
+          item.isComplete=true
+          return item
+        })
+  }
+
+    this.setState({
+      todoList:firstStep
+    })
+  }
+
   render() {
     const {todoList,newItem}=this.state
     /**
@@ -92,7 +121,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Header">
-          <img src={tick} width={32} height={32}/>
+          <img src={tick} onClick={this.onClickTickAll} width={32} height={32}/>
           <input 
             type="text"
             placeholder='Add a new item'
