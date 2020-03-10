@@ -47,7 +47,6 @@ class App extends Component {
        const isComplete=item.isComplete
        const {todoList}=this.state
        const index=todoList.indexOf(item)
-       console.log(item)
        this.setState({
          todoList:[
            ...todoList.slice(0, index),
