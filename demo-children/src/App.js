@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <Accordion heading="Toyota">
+        {/* Đây là phần this.props.children */}
         Mercedes-Benz is a German global automobile marque and a division 
         |of Daimler AG. Mercedes-Benz is known for luxury vehicles, vans, trucks, buses, 
         |coaches and ambulances. The headquarters is in Stuttgart, Baden-Württemberg.

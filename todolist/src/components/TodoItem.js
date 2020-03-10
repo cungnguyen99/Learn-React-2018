@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
+
 import './TodoItem.css'
 import checkimg from '../img/check-done.svg';
 import checkComplete from '../img/check.svg'
 var classNames = require('classnames');
 /**
- * BÀI LIÊN QUAN 6,7,8,9,10,11,13,14, 15, 16
+ * BÀI LIÊN QUAN 6,7,8,9,10,11,13,14, 15, 16,17, 19
  */
 class TodoItem extends Component {
   render() {
@@ -33,4 +35,25 @@ class TodoItem extends Component {
   }
 }
 
+TodoItem.propTypes ={
+  //item là một obj gồm các thuộc tính trong shape
+  item: PropTypes.shape({
+    isComplete: PropTypes.bool,
+    //nếu là thuộc tính bắt buộc phải có thì thêm isRequired
+    title: PropTypes.string.isRequired,
+    time: PropTypes.string
+  }),
+  onClick: PropTypes.func
+  /**
+   * Trong trường hợp giả sử TodoItem có thêm thuộc tính timeComplete mà muốn chỉ nhận vào 1 trong các
+   * giá trị có sẵn mặc định thì ta viết như sau(có thể truyền vào bất kỳ kiểu gì k nhất thiết phải là string)
+   * timeDone: PropTypes.oneOf(['AM','PM'])
+   */
+}
+//Nếu muốn một thuộc tính có gtri mặc định khi ngta không truyền gì vào thì
+TodoItem.defaultProps={
+  item:{  
+    time: '7h'
+  }
+}
 export default TodoItem;

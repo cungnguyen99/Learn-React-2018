@@ -13,7 +13,7 @@ class App extends Component {
       newItem:'',
       todoList : [
         { title: 'Go to shopping',time:'5h', isComplete: true },
-        { title: 'Go to school',time:'7h' },
+        { title: 'Go to school'},
         { title: 'Play game', time:'9h30' }
       ]
     }
