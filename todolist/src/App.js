@@ -64,7 +64,7 @@ class App extends Component {
       newItem: event.target.value
     })
   }
-  onKeyUp(event){
+  onKeyUp(event,time='7h'){
     let text=event.target.value
     if(event.keyCode===13){//key của nút enter là 13
       if(!text){
@@ -78,7 +78,7 @@ class App extends Component {
   
       this.setState({
         todoList:[
-          {title: text, isComplete:false},
+          {title: text, isComplete:false, time},
           /**
            * đoạn này là coppy todoList trong state ra. giống đoạn const {todoList}=this.state ở trên
            * nhưng ở trên dùng nhiều cái biến kia nên khai báo riêng ra còn bản chất vẫn là 

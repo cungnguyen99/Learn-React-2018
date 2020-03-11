@@ -34,10 +34,11 @@ class TodoItem extends Component {
     );
   }
 }
-
+ 
+/**BÀI 19: PROPS TYPES */
 TodoItem.propTypes ={
-  //item là một obj gồm các thuộc tính trong shape
-  item: PropTypes.shape({
+    //item là một obj gồm các thuộc tính trong shape
+    item: PropTypes.shape({
     isComplete: PropTypes.bool,
     //nếu là thuộc tính bắt buộc phải có thì thêm isRequired
     title: PropTypes.string.isRequired,
@@ -45,15 +46,13 @@ TodoItem.propTypes ={
   }),
   onClick: PropTypes.func
   /**
-   * Trong trường hợp giả sử TodoItem có thêm thuộc tính timeComplete mà muốn chỉ nhận vào 1 trong các
+   * 1.Trong trường hợp giả sử TodoItem có thêm thuộc tính timeComplete mà muốn chỉ nhận vào 1 trong các
    * giá trị có sẵn mặc định thì ta viết như sau(có thể truyền vào bất kỳ kiểu gì k nhất thiết phải là string)
    * timeDone: PropTypes.oneOf(['AM','PM'])
+   * 2.Trong trường hợp muốn thuộc tính đó được truyền vào một trong 2 kiểu
+   * PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+   * 3.Muốn thuộc tính đó là một mảng gồm các số
+   * PropTypes.arrayOf(PropTypes.number)
    */
-}
-//Nếu muốn một thuộc tính có gtri mặc định khi ngta không truyền gì vào thì
-TodoItem.defaultProps={
-  item:{  
-    time: '7h'
-  }
 }
 export default TodoItem;
