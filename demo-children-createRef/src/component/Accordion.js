@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+// Bài liên quan 18, 20
 class Accordion extends Component{
     constructor(props){
         super(props);
@@ -8,7 +9,6 @@ class Accordion extends Component{
     }
 
     onClick(){
-        console.log('1')
         this.setState({
             isCollapsed: !this.state.isCollapsed
         })
