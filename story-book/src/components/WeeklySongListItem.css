@@ -1,4 +1,5 @@
-.WeeklySongListItem {
+.WeeklySongListItem,
+.WeeklySongListItem2 {
     display: flex;
     align-items: center;
     width: 100%;
@@ -8,24 +9,23 @@
     font-family: Arial, sans-serif;
   }
   
-  .WeeklySongListItem .order {
+.order {
     font-size: 20px;
     width: 35px;
     text-align: center;
   }
   
-  .WeeklySongListItem .info {
+.info {
     flex: 1;
   }
   
-  .WeeklySongListItem .title {
+.title {
     font-size: 14px;
     margin-bottom: 6px;
     margin-top: 0;
   }
-  
-  .WeeklySongListItem .singer,
-  .WeeklySongListItem .view-count {
+.singer,
+.view-count {
     font-size: 12px;
     color: #888;
     margin: 0;
